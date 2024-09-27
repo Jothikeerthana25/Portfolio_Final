@@ -1,0 +1,620 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Container holding both sidebar and main content */
+.container {
+    display: flex;
+    height: 100vh;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 400px;
+    padding: 10px;
+    background-color: #222;
+    color: white;
+    transition: transform 0.3s ease;
+    position: relative; /* Adjust positioning for mobile */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Hide sidebar */
+}
+
+.sidebar .profile {
+    text-align: center;
+}
+
+.sidebar .profile img {
+    width: 200px;
+   
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    opacity: 0; 
+    transform: scale(0.8); 
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    border: 8px solid #ffcc00; 
+}
+
+.sidebar .profile img.animate {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.sidebar h2 {
+    color: #ffcc00;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* Main Content Section */
+/* Main Content Section */
+.main-content {
+flex-grow: 1;
+padding: 20px;
+background-color: #1a1a1a;
+color: white;
+overflow-y: auto;
+height: 100vh; /* Ensure the main content takes full height */
+}
+
+/* Home Section */
+.home {
+padding-top: 2%;
+text-align: center;
+height: 100vh; /* Full height for home section */
+display: flex;  /* Use flex to center content */
+flex-direction: column; /* Stack elements vertically */
+justify-content: center; /* Center content vertically */
+}
+
+
+
+.home h1 {
+    
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.home span {
+    color: #ffcc00;
+}
+
+.home p {
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 40px;
+    padding-bottom: 2%;
+}
+.home h1, .home p
+{ 
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; 
+} 
+  .home h1.show, .home p.show
+{ 
+    opacity: 1; transform: translateY(0); 
+ }  
+
+.abtn {
+    display: inline-block;
+    padding: 10px;
+    width: 20%;
+    align-self: center;
+    background-color: #ffcc00;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.abtn:hover {
+    background-color: #ffcc00;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.about__title {
+    color: #1a1a1a;
+    background-color: #ffcc00;
+    margin: 0 auto;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.about__head {
+    display: inline-block;
+    text-align: center;
+    color: #1a1a1a;
+    background-color: #ffcc00;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.about h3 {
+    color: #ffcc00;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.about p {
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.about__btn {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 20%;
+}
+
+/* Skills Section */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill {
+    background-color: #333;
+    color: #ffcc00;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+    font-size: 14px;
+}
+
+.skill:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+/*Education section*/
+.education h1 {
+color:black;
+text-align: center;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 2.2rem;
+}
+
+/* Education Section styling */
+.education{
+margin: 50px auto;
+background-color: #ffcc00;
+padding: 40px;
+border-radius: 8px;
+width: 100%;
+height: 100vh;
+}
+
+.education-item {
+margin-bottom: 20px;
+}
+
+.education-item h3 {
+color: black;
+font-weight: bold;
+font-size: 1.2em;
+}
+
+.date{
+color: black;
+font-weight: bold;
+font-family: 'Times New Roman', Times, serif;
+}
+
+/* Progress Bar Styling */
+.progress {
+background-color: #e0e0e0;
+border-radius: 10px;
+height: 20px;
+width: 80%;
+position: relative;
+margin-top: 10px;
+}
+
+.progress-bar {
+background-color: #040505;
+height: 100%;
+width: 100%;
+border-radius: 10px;
+text-align: right;
+font-family: Georgia, 'Times New Roman', Times, serif;
+line-height: 20px;
+padding-right: 10px;
+color: white;
+font-size: 0.9em;
+font-weight: bold;
+}
+/* Project Section */
+.project {
+text-align: center;
+padding: 2% ;
+}
+
+.project h2 {
+font-size: 2.5em;
+margin-bottom: 20px;
+font-weight: bold;
+color: #ffcc00;
+}
+
+.projects-container {
+display: flex; 
+justify-content: center;
+gap: 20px;
+}
+.project-card h5{
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: #000;
+
+text-align: justify;
+}
+.project-card h4{
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: #000;
+
+text-decoration: underline;
+text-align: center;
+}
+.project-card p{
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: #000;
+text-align: justify;
+font-size: 1.1rem;
+}
+
+.project-card {
+background-color: #ffcc00;
+border-radius: 15px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 20px;
+max-width: 300px;
+max-height: 540px;
+text-align: center;
+transition: transform 0.3s;
+}
+
+.project-card:hover {
+transform: translateY(-10px);
+}
+
+.project-card img {
+width: 100%;
+height: 40%;
+border: 6px solid #000; 
+border-radius: 10px;
+margin-bottom: 20px;
+}
+
+
+.buttons {
+display: flex;
+justify-content: space-around;
+margin-top: 10px;
+}
+
+.gbtn {
+background-color: #000;
+color: #ffcc00;
+padding: 10px 20px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.gbtn:hover {
+background-color: #000;
+}
+
+/*contact section*/
+.contact-section {
+width: 100%;
+height: 80%;
+margin: 50px auto;
+align-self: center;
+background-color:#ffcc00;
+padding: 20px;
+border-radius: 8px;
+text-align: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section title */
+.contact-section h2 {
+margin-bottom: 20px;
+font-size: 2.0rem;
+color: #000;
+}
+
+/* Contact info section */
+.contact-info {
+display: flex;
+justify-content: space-between;
+background-color:#000 ;
+padding: 10px;
+border-radius: 8px;
+color: white;
+margin-bottom: 20px;
+}
+
+/* Each contact info item */
+.info-item {
+width: 30%;
+display: flex;
+
+flex-direction: column;
+align-items: center;
+}
+
+/* FontAwesome icon size */
+.info-item i {
+font-size: 24px;
+margin-bottom: 5px;
+}
+.info-item p{
+font-family: 'Times New Roman', Times, serif;
+font-size: 1.1rem;
+}
+
+/* Styling for the form inputs and text area */
+.contact-form input, 
+.contact-form textarea {
+width: 60%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+box-sizing: border-box;
+}
+.contact-form label{
+color: #000;
+font-size: 1.2rem;
+font-weight: bold;
+
+}
+/* Textarea resize control and height */
+.contact-form textarea {
+resize: vertical;
+height: 100px;
+}
+
+/* Submit button styling */
+.contact-form button {
+width: 40%;
+background-color: #000;
+font-size: 1.1rem;
+color: white;
+padding: 10px;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+}
+
+/* Hover effect for the button */
+.contact-form button:hover {
+background-color: #444;
+}
+
+
+/* Social Media Icons */
+.social-icons a {
+    margin: 10px;
+    font-size: 24px;
+    color: white;
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+    
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 1000;
+        transform: translateX(-100%); /* Start hidden */
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Show sidebar */
+    }
+    .home h1 {
+    
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.home span {
+    font-size: 20px;;
+    color: #ffcc00;
+}
+.abtn{
+    font-size: 11px;
+
+}
+.education-item h3 {
+color: black;
+font-weight: bold;
+font-size: 12px;
+}
+.date{
+color: black;
+font-weight: bold;
+font-size: 12px;
+font-family: 'Times New Roman', Times, serif;
+}
+.progress{
+height: 15px;
+}
+.progress-bar {
+background-color: #040505;
+height: 100%;
+width: 100%;
+border-radius: 10px;
+padding-right: 10px;
+font-family: 'Times New Roman', Times, serif;
+color: white;
+font-size: 0.6rem;
+font-weight: bold;
+}
+.project{
+height:100vh;
+}
+.project h2 {
+font-size: 2.0rem;
+}
+.project-card h4{
+font-size: 0.6rem;
+text-align:center;
+}
+.project-card h5{
+font-size: 0.6rem;
+text-align:left;
+}
+
+.project-card p{
+font-size: 0.4rem;
+text-align:justify;
+}
+.gbtn{
+padding:10px;
+font-size:0.7rem;
+}
+.project-card img {
+width: 100%;
+height: 20%;
+border: 3px solid #000; 
+border-radius: 10px;
+margin-bottom: 20px;
+}
+.info-item p{
+font-family: 'Times New Roman', Times, serif;
+font-size: 0.5rem;
+}
+.contact-section h2 {
+font-size:1.3rem;
+}
+.contact-form label{
+
+font-size: 0.8rem;
+font-weight: bold;
+
+}
+/* Textarea resize control and height */
+.contact-form textarea {
+
+font-size:0.8rem;
+}
+.contact-form input, 
+.contact-form textarea {
+padding:4px;
+}
+.contact-form button{
+font-size:0.8rem;
+width:40%;
+padding: 10px; 
+}
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: #ffcc00;
+        color: #000;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        z-index: 1001; /* Ensure it's above sidebar */
+    }
+
+    .menu-toggle.hidden {
+        display: none;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+}
+
+
+/* Hide the menu button on larger screens */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
