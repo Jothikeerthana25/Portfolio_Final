@@ -22,4 +22,7 @@ let percentage = bar.getAttribute('data-percentage');
 bar.style.width = percentage + '%';
 });
 });
-
+function showAlert() {
+    alert("Your message has been successfully sent!");
+    return true; // Allows the form to be submitted after the alert.
+}

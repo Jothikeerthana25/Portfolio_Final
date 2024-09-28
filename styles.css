@@ -406,11 +406,16 @@ align-items: center;
 /* FontAwesome icon size */
 .info-item i {
 font-size: 24px;
+color: #f0f0f0;
 margin-bottom: 5px;
 }
 .info-item p{
 font-family: 'Times New Roman', Times, serif;
-font-size: 0.8rem;
+color:#f0f0f0;
+font-size: 1.1rem;
+}
+.info-item a{
+    color:white;
 }
 
 /* Styling for the form inputs and text area */
@@ -537,6 +542,7 @@ font-weight: bold;
 }
 .project-card{
     height:60%;
+    width:200px;
 }
 .project{
 height:100vh;
